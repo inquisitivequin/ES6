@@ -65,9 +65,26 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-console.log('Hello')
+"use strict";
+
+
+var _external = __webpack_require__(1);
+
+console.log(_external.keyVal);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var keyVal = exports.keyVal = 2000;
 
 /***/ })
 /******/ ]);

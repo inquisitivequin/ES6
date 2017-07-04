@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const config = {
 	entry: './source/index.js',
@@ -13,6 +14,14 @@ const config = {
 				test: /\.js$/
 			}
 		]
+	},
+	plugins: [
+		new webpack.HotModuleReplacementPlugin({
+
+      })
+	],
+	devServer: {
+		hot: true
 	}
 }
 

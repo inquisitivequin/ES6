@@ -1,5 +1,3 @@
-let burd = () => {
-	console.log('Hello')
-}
+import {keyVal} from '../external/external.js'
 
-burd()
+console.log(keyVal)
