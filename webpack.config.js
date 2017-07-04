@@ -1,11 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
 	entry: './source/index.js',
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'bundle.js'
+		filename: 'bundle.[hash].js'
 	},
 	module: {
 		rules: [
@@ -18,10 +19,15 @@ const config = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin({
 
-      })
+      }),
+		new HtmlWebpackPlugin({
+			template: 'index.html'
+		})
 	],
 	devServer: {
-		hot: true
+		hot: true,
+		contentBase: path.join(__dirname,"build"),
+		compress: true
 	}
 }
 
