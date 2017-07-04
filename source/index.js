@@ -1,10 +1,6 @@
-import keyVal from '../external/external';
+import {keyVal, test} from '../xtrnl/xrnl';
+
 
 console.log(keyVal)
 
-if (module.hot) {
-	module.hot.accept('../external/external', () => {
-		console.log('I got the update fool!');
-		console.log(keyVal)
-	})
-}
+test()
