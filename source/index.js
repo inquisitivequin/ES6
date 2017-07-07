@@ -1,15 +1,10 @@
-class ConvArr extends Array {
-	convert() {
-		let returnArray = []
-		this.forEach(val => returnArray.push("con'd" + val))
-		return returnArray
-	}
+let sym = Symbol('dabug')
+
+let altsym = Symbol('dabog')
+
+let obj = {
+	name: 'poat',
+	[sym]: 22
 }
 
-let numArr = new ConvArr();
-
-numArr.push(1)
-numArr.push(2)
-numArr.push(3)
-
-console.log(numArr.convert())
+console.log(obj[sym])
