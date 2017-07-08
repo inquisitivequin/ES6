@@ -1,23 +1,23 @@
-let arr = [1,2,3,4]
-
-arr[Symbol.iterator] = () => {
-	let nextValue = 10;
-	return {
-		next: () =>  {
-			nextValue++
-			return
-			done: nextValue > 15 ? true : false
-			value: nextValue
+let pers = {
+	name: 'poat',
+	hobs: ['food', 'more food'],
+	[Symbol.iterator]: function() {
+		let i = 0
+		let hobs = this.hobs
+		return {
+			next: () => {
+				let val = hobs[i]
+				i++
+				return {
+					done: i > hobs.length ? true : false,
+					value: val
+				}
+			}
 		}
 	}
 }
 
-let it = arr[Symbol.iterator]()
 
-for (let element of arr) {
-	console.log(element)
+for (let hob of pers) {
+	console.log(hob)
 }
-
-
-
-
