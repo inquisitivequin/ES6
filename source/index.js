@@ -10,6 +10,6 @@ function *g(end) {
 let it = g(3)
 
 console.log(it.next())
-console.log(it.throw('Look an error'))
+console.log(it.return('Look an error'))
 console.log(it.next())
 console.log(it.next())
