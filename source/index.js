@@ -1,15 +1,21 @@
-function *g(end) {
-	for (let i = 0; i < end; i++)
-		try{
-		yield i
-	} catch (e) {
-		console.log(e)
-	}
+function waSec(sec) {
+	return new Promise(function(resolve, reject) {
+		if (sec > 2) {
+			reject('Rejected Fool!')
+		} else {
+		setTimeout(function() {
+			sec++;
+			resolve(sec)
+		}, 1500)
+	  }
+	})
 }
 
-let it = g(3)
-
-console.log(it.next())
-console.log(it.return('Look an error'))
-console.log(it.next())
-console.log(it.next())
+waSec(2)
+.then(waSec)
+.then(function(sec) {
+	console.log(sec)
+})
+.catch(function(err) {
+	console.log(err)
+})
