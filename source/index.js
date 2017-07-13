@@ -1,11 +1,9 @@
-let pers = {
-	name: 'toad'
+let ar = [1,2,3,4,5]
+
+let it = ar.entries()
+
+console.log(it.next())
+
+for (let el of it) {
+	console.log(el)
 }
-
-let bo = {
-	name: 'poat'
-}
-
-console.log(pers.__proto__ == Object.prototype)
-
-Object.setPrototypeOf(pers, bo)
