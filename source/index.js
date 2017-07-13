@@ -1,11 +1,11 @@
-let obj1 = {
-	a: 1
+let pers = {
+	name: 'toad'
 }
 
-let obj2 = {
-	b:2
+let bo = {
+	name: 'poat'
 }
 
-let obj = Object.assign(obj1, obj2)
+console.log(pers.__proto__ == Object.prototype)
 
-console.log(obj)
+Object.setPrototypeOf(pers, bo)
