@@ -1,21 +1,11 @@
-function waSec(sec) {
-	return new Promise(function(resolve, reject) {
-		if (sec > 2) {
-			reject('Rejected Fool!')
-		} else {
-		setTimeout(function() {
-			sec++;
-			resolve(sec)
-		}, 1500)
-	  }
-	})
+let obj1 = {
+	a: 1
 }
 
-waSec(2)
-.then(waSec)
-.then(function(sec) {
-	console.log(sec)
-})
-.catch(function(err) {
-	console.log(err)
-})
+let obj2 = {
+	b:2
+}
+
+let obj = Object.assign(obj1, obj2)
+
+console.log(obj)
