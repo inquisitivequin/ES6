@@ -1,7 +1,13 @@
-let set = new Set([1,1,1,2])
-
-set.add(3)
-
-for (el of set) {
-	console.log(el)
+class Pers {
+	constructor(name) {
+		this.name = name;
+	}
 }
+
+function tOb() {
+	this.age = 4
+}
+
+let pers = Reflect.construct(Pers, ['poat'], tOb)
+
+console.log(pers)
