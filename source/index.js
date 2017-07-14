@@ -1,13 +1,21 @@
 class Pers {
-	constructor(name) {
+	constructor(name, age) {
 		this.name = name;
+		this.age = age
+	}
+	greet() {
+		console.log('Hola ' + this.name)
 	}
 }
 
-function tOb() {
-	this.age = 4
+let proto = {
+	age:234
 }
 
-let pers = Reflect.construct(Pers, ['poat'], tOb)
 
-console.log(pers)
+
+let pers = new Pers('poat', 42)
+
+Reflect.setPrototypeOf(pers,proto)
+
+console.log(Reflect.getPrototypeOf(pers))
