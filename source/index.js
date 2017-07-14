@@ -12,9 +12,13 @@ deck.set('as', ace)
 
 deck.set('k', king)
 
-for (key of deck.values()) {
+
+
+for (key of deck) {
 	console.log(key)
 }
 
+for (key of deck.keys()) {
 
+}
 
