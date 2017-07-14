@@ -9,12 +9,12 @@ let king ={
 let deck = new Map()
 
 deck.set('as', ace)
-deck.set('as', ace)
+
 deck.set('k', king)
 
-deck.clear()
+for (key of deck.values()) {
+	console.log(key)
+}
 
-console.log(deck)
 
-console.log(deck.get('as'))
 
