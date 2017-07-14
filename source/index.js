@@ -1,24 +1,10 @@
-let ace = {
-	name: 'Ace of Diamonds'
+let set = new Set([1,1,1,2])
+
+set.add(3)
+set.add(3)
+set.add(7)
+
+
+for (el of set.keys()) {
+	console.log(el)
 }
-
-let king ={
-	name: 'King of Diamonds'
-}
-
-let deck = new Map()
-
-deck.set('as', ace)
-
-deck.set('k', king)
-
-
-
-for (key of deck) {
-	console.log(key)
-}
-
-for (key of deck.keys()) {
-
-}
-
