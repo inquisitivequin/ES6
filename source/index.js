@@ -1,9 +1,20 @@
-let ar = [1,2,3,4,5]
-
-let it = ar.entries()
-
-console.log(it.next())
-
-for (let el of it) {
-	console.log(el)
+let ace = {
+	name: 'Ace of Diamonds'
 }
+
+let king ={
+	name: 'King of Diamonds'
+}
+
+let deck = new Map()
+
+deck.set('as', ace)
+deck.set('as', ace)
+deck.set('k', king)
+
+deck.clear()
+
+console.log(deck)
+
+console.log(deck.get('as'))
+
