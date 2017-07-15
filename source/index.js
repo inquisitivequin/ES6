@@ -1,10 +1,13 @@
 class Pers {
 	constructor(name, age) {
-		this.name = name;
+		this._name = name;
 		this.age = age
 	}
-	greet() {
-		console.log('Hola ' + this.name)
+	get name() {
+		return this._name
+	}
+	set name(val) {
+		this._name = val
 	}
 }
 
@@ -12,10 +15,11 @@ let proto = {
 	age:234
 }
 
+let pers = new Pers('poat', 23)
 
+Reflect.defineProperty(pers, 'hobs', {
+	value: ['food', 'food']
+})
 
-let pers = new Pers('poat', 42)
-
-Reflect.setPrototypeOf(pers,proto)
-
-console.log(Reflect.getPrototypeOf(pers))
+console.log(pers.hobs)
+console.log(Reflect.ownKeys(pers))
