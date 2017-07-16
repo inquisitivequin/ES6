@@ -1,31 +1,19 @@
-class Pers {
-	constructor(name, age) {
-		this._name = name;
-		this.age = age
-	}
-	get name() {
-		return this._name
-	}
-	set name(val) {
-		this._name = val
+let pers = {
+	name: 'poat'
+}
+
+let han = {
+	get: function(tar, na) {
+		return na in tar ? tar[na] : 0
+	},
+	set: function(target, prop, val) {
+		if(val.length >= 2) {
+			Reflect.set(target, prop, val)
+		}
 	}
 }
 
-let proto = {
-	age:234
-}
+var prox = new Proxy(pers, han);
+prox.name = 'jurd'
 
-let pers = new Pers('poat', 23)
-
-
-//Reflect.preventExtensions(pers)
-
-
-Reflect.defineProperty(pers, 'hobs', {
-	value: ['food', 'food']
-})
-
-
-
-console.log(pers.hobs)
-console.log(Reflect.ownKeys(pers))
+console.log(prox.name)
