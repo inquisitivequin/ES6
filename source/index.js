@@ -1,15 +1,14 @@
-function log(msg) {
-	console.log('Log fool ' + msg)
+let pers = {
+	name: 'poat'
 }
 
 let han = {
-	apply: function(tar, thisAr, argList) {
-		if (argList.length == 1) {
-			return Reflect.apply(tar, thisAr, argList)
-		}
+	get: function(tar, prop) {
+		return Reflect.get(tar, prop)
 	}
 }
 
-let prox = new Proxy(log, han)
+let {proxy, revoke} = Proxy.revocable(pers, han)
 
-prox('hola')
+revoke()
+console.log(proxy.name)
