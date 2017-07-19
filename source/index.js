@@ -13,7 +13,8 @@ let han = {
 	}
 }
 
-var prox = new Proxy(pers, han);
-prox.name = 'jurd'
+var prox = new Proxy({}, han);
 
-console.log(prox.name)
+Reflect.setPrototypeOf(pers, prox)
+
+console.log(pers.hobs)
