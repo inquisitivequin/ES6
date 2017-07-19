@@ -3,6 +3,10 @@ let pers = {
 }
 
 let han = {
+
+	}
+
+let phan = {
 	get: function(tar, na) {
 		return na in tar ? tar[na] : 0
 	},
@@ -15,6 +19,8 @@ let han = {
 
 var prox = new Proxy({}, han);
 
-Reflect.setPrototypeOf(pers, prox)
+let pprox = new Proxy(prox, phan)
+
+Reflect.setPrototypeOf(pers, pprox)
 
 console.log(pers.hobs)
